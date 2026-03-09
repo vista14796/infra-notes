@@ -4,7 +4,7 @@ Linux の基本操作コマンドをまとめた学習ノートです。
 
 使用環境：
 
-- Linux (Ubuntu / CentOS)
+- Linux (Rocky Linux 9.7 / aarch64)
 
 ---
 
