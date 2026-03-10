@@ -18,4 +18,4 @@ PowerShell を使用して Active Directory のユーザー作成を自動化す
 
 Linux 基本コマンドの練習ノート。
 
-[Read the notes](docs/linux-basic-commands-ja.md)
+[Read the notes](docs/linux-basic-commands-ja.md 20260309)
