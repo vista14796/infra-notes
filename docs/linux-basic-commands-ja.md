@@ -152,3 +152,88 @@ find /etc -name "*.conf" -type f | head -10
 
 /etc ディレクトリから .conf ファイルを検索し  
 最初の10件を表示します。
+
+---
+# 📅 2026-03-10
+---
+
+## /etc/passwd 確認
+```
+cat /etc/passwd
+```
+
+/etc/passwdの内容を確認します。
+
+---
+
+## システムログ表示
+```
+less /var/log/messages
+```
+
+システムのログを1ページずつ表示します。
+
+---
+
+## 先頭20行表示
+```
+head -20 /etc/passwd
+```
+
+/etc/passwdの最初の20行を表示します。
+
+---
+
+## 末尾20行表示
+```
+tail -20 /etc/passwd
+```
+
+/etc/passwdの最後の20行を表示します。
+
+---
+
+## キーワード検索
+```
+grep "root" /etc/passwd
+```
+
+/etc/passwdファイルでrootを含む行を検索します。
+
+---
+
+## ログ再帰検索
+```
+grep -r "error" /var/log/ 2>/dev/null
+```
+
+システムログでエラーメッセージを再帰的に検索します。権限エラーは表示しません。
+
+---
+
+## 行数カウント
+```
+wc -l /etc/passwd
+```
+
+/etc/passwdの行数を数えます。
+
+---
+
+## ユーザー名抽出
+```
+cut -d: -f1 /etc/passwd
+```
+
+/etc/passwdからユーザー名のみ抽出して表示します。
+
+---
+
+## 並び替えと先頭表示
+```
+sort /etc/passwd | head -10
+```
+
+/etc/passwdをアルファベット順に並べ替え、先頭10行を表示します。
+
+---
