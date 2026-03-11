@@ -23,9 +23,6 @@ for ($i = 1; $i -le 100; $i++) {
 
 $UserList | Export-Csv -Path "C:\temp\UserList.csv" -NoTypeInformation
 Write-Host "CSV generated at C:\temp\UserList.csv" -ForegroundColor Cyan
-
-
-
 #台湾人名前（漢字）：
 
 
@@ -51,9 +48,6 @@ for ($i = 1; $i -le 100; $i++) {
 
 $UserList | Export-Csv -Path "C:\temp\UserList.csv" -NoTypeInformation
 Write-Host "CSV generated at C:\temp\UserList.csv" -ForegroundColor Cyan
-
-
-
 #日本人名前：
 
 
