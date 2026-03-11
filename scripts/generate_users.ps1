@@ -1,4 +1,4 @@
-先確定DC建立AD帳號時的格式是否一致
+#先確定DC建立AD帳號時的格式是否一致
 
 # Part 1: Generate CSV File
 $Surnames = "Chen","Lin","Huang","Zhang","Li","Wang","Wu","Liu","Tsai","Yang"
@@ -24,7 +24,7 @@ $UserList | Export-Csv -Path "C:\temp\UserList.csv" -NoTypeInformation
 Write-Host "CSV generated at C:\temp\UserList.csv" -ForegroundColor Cyan
 
 
-以下為中文：
+#以下為中文：
 
 
 # Part 1: Generate CSV File
