@@ -33,6 +33,6 @@ PowerShell を使用して Active Directory のユーザー作成を自動化す
 
 Linux 基本コマンドの練習ノート。
 
-学習の進捗に合わせて順次更新していきます。
+学習の進捗に合わせて順次更新していきます。（2026/3/11更新しました）
 
 [Read the notes](docs/linux-basic-commands-ja.md)
