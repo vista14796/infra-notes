@@ -12,7 +12,9 @@ PowerShell を使用して Active Directory のユーザー作成を自動化す
 
 [Read the lab](docs/ad-user-automation-ja.md)
 
-[Read the scripts](scripts/create_ad_users.ps1)
+[Read the generate_users scripts](scripts/generate_users.ps1)
+
+[Read the create_ad_users scripts](scripts/create_ad_users.ps1)
 
 ---
 
