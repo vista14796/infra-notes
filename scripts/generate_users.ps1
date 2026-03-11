@@ -22,8 +22,3 @@ for ($i = 1; $i -le 100; $i++) {
 
 $UserList | Export-Csv -Path "C:\temp\UserList.csv" -NoTypeInformation
 Write-Host "CSV generated at C:\temp\UserList.csv" -ForegroundColor Cyan
-
-}
-
-$UserList | Export-Csv -Path "C:\temp\UserList.csv" -NoTypeInformation
-Write-Host "CSV generated at C:\temp\UserList.csv" -ForegroundColor Cyan
