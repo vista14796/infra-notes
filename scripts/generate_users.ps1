@@ -1,4 +1,3 @@
-#先確定DC建立AD帳號時的格式是否一致
 #台湾人名前（ロマー字）：
 
 # Part 1: Generate CSV File
