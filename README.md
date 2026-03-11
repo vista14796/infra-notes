@@ -6,13 +6,10 @@ Infrastructure / Cloud learning notes.
 
 ## Learning Progress
 
-✔ Linux basic commands
-
-✔ Active Directory automation
-
-⬜ VMware virtualization lab
-
-⬜ AWS basic infrastructure
+- [x] Linux basic commands
+- [x] Active Directory automation
+- [ ] VMware virtualization lab
+- [ ] AWS basic infrastructure
 
 
 ## Projects
@@ -33,6 +30,6 @@ PowerShell を使用して Active Directory のユーザー作成を自動化す
 
 Linux 基本コマンドの練習ノート。
 
-学習の進捗に合わせて順次更新していきます。（2026/3/11更新しました）
+学習の進捗に合わせて順次更新していきます。
 
 [Read the notes](docs/linux-basic-commands-ja.md)
