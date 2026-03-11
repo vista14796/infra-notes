@@ -12,6 +12,8 @@ PowerShell を使用して Active Directory のユーザー作成を自動化す
 
 [Read the lab](docs/ad-user-automation-ja.md)
 
+[Read the scripts](scripts/create_ad_users.ps1)
+
 ---
 
 ### Linux Basic Commands
