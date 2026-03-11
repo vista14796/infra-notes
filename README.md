@@ -4,6 +4,13 @@ Infrastructure / Cloud learning notes.
 
 ---
 
+## Learning Progress
+
+✔ Linux basic commands
+✔ Active Directory automation
+⬜ VMware virtualization lab
+⬜ AWS basic infrastructure
+
 ## Projects
 
 ### Active Directory User Automation
