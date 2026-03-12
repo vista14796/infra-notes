@@ -357,3 +357,158 @@ ls -la /tmp/umask_test
 作成したファイルにumask 022が正しく適用されているか確認します。
 
 ---
+# 📅 2026-03-12
+---
+
+## ハードリンク作成
+```
+ln /tmp/practice/file1.txt /tmp/practice/hardlink1
+```
+
+`/tmp/practice/file1.txt` のハードリンクを `hardlink1` という名前で作成します。
+
+---
+
+## iノード番号確認
+```
+ls -lai /tmp/practice/
+```
+
+ディレクトリ内の詳細情報を表示します。`-i` オプションでiノード番号を確認できます。ハードリンクは元ファイルと同じiノード番号を持ちます。
+
+---
+
+## シンボリックリンク作成
+```
+ln -s /tmp/practice/file1.txt /tmp/practice/symlink1
+```
+
+`/tmp/practice/file1.txt` へのシンボリックリンクを `symlink1` という名前で作成します。
+
+---
+
+## シンボリックリンク確認
+```
+ls -la /tmp/practice/
+```
+
+先頭が `l` で、矢印 `->` があるエントリがシンボリックリンクです。
+
+---
+
+## ファイルコピー
+```
+cp /tmp/practice/file1.txt /tmp/practice/file1_backup.txt
+```
+
+`file1.txt` を `file1_backup.txt` という名前でコピーします。
+
+---
+
+## ハードリンク作成（削除テスト用）
+```
+ln /tmp/practice/file1_backup.txt /tmp/practice/hardlink2
+```
+
+`file1_backup.txt` のハードリンクを `hardlink2` という名前で作成します。
+
+---
+
+## シンボリックリンク作成（削除テスト用）
+```
+ln -s /tmp/practice/file1_backup.txt /tmp/practice/symlink2
+```
+
+`file1_backup.txt` へのシンボリックリンクを `symlink2` という名前で作成します。
+
+---
+
+## 元ファイル削除
+```
+rm /tmp/practice/file1_backup.txt
+```
+
+`file1_backup.txt` を削除してハードリンクとシンボリックリンクの挙動の違いを確認します。
+
+---
+
+## ハードリンク読み込み確認
+```
+cat /tmp/practice/hardlink2
+```
+
+元ファイルを削除してもハードリンクはデータを保持しているため、読み込みが可能です。
+
+---
+
+## シンボリックリンク読み込み確認
+```
+cat /tmp/practice/symlink2
+```
+
+元ファイルを削除するとシンボリックリンクは無効になるため、読み込みができません（リンク切れ）。
+
+---
+
+## SUID設定
+```
+chmod u+s /tmp/practice/file1.txt
+```
+
+SUIDを設定します。実行時にオーナーの権限で動作します。権限表示に `s` が現れます。
+
+---
+
+## SGID設定
+```
+chmod g+s /tmp/practice/test1/
+```
+
+SGIDを設定します。ディレクトリ内に作成されたファイルはグループを継承します。権限表示に `s` が現れます。
+
+---
+
+## Sticky bit設定
+```
+chmod +t /tmp/practice/
+```
+
+Sticky bitを設定します。ディレクトリ内のファイルはオーナーのみ削除できます。権限表示に `t` が現れます。
+
+---
+
+## 権限確認
+```
+ls -la /tmp/practice/
+```
+
+SUID・SGID・Sticky bitが正しく設定されているか確認します。
+
+---
+
+## ACL確認
+```
+getfacl /tmp/practice/file1.txt
+```
+
+ファイルのアクセス制御リスト（ACL）を表示します。
+
+---
+
+## ACL設定
+```
+sudo setfacl -m u:nobody:rw /tmp/practice/file1.txt
+```
+
+`nobody` ユーザーに読み取りと書き込み権限を付与します。
+
+---
+
+## ACL設定後の確認
+```
+getfacl /tmp/practice/file1.txt
+```
+
+`nobody` ユーザーへのACLが正しく設定されているか確認します。
+
+---
