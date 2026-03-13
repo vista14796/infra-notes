@@ -111,3 +111,8 @@ PowerShell を使うことで
 - CSV からユーザー作成
 - グループ自動追加
 - ログ出力
+
+## 関連スクリプト
+
+- [`generate_users.ps1`](../scripts/ad/generate_users.ps1) - ユーザーリスト生成スクリプト
+- [`create_ad_users.ps1`](../scripts/ad/create_ad_users.ps1) - ADユーザー自動作成スクリプト
