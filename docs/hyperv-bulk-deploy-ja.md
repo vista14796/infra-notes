@@ -92,7 +92,7 @@ TPM 設定をスクリプトから除外しました。
 
 以下のコマンドで元の名前に戻しました：
 ```powershell
-Rename-Computer -NewName "SESE109-11" -Restart -Force
+Rename-Computer -NewName "NEW-COMPUTER-NAME" -Restart -Force
 ```
 
 教訓：スクリプトのテストは対象 VM を明確に確認してから実行する。
