@@ -108,6 +108,5 @@ Rename-Computer -NewName "NEW-COMPUTER-NAME" -Restart -Force
 ---
 
 ## 関連スクリプト
-
-- [`bulk_deploy_vm.ps1`](./bulk_deploy_vm.ps1) - 一括デプロイスクリプト
-- [`rename_computer.ps1`](./rename_computer.ps1) - コンピューター名変更スクリプト
+- [`bulk_deploy_vm.ps1`](scripts/hyperv/bulk_deploy_vm.ps1) - 一括デプロイスクリプト
+- [`rename_computer.ps1`](scripts/hyperv/rename_computer.ps1) - コンピューター名変更スクリプト
