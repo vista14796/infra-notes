@@ -34,7 +34,7 @@ PowerShell を使用して Active Directory のユーザー作成を自動化す
 
 PowerShell を使用して Windows Server 2025 を一括デプロイする自動化スクリプト。
 
-[Read the lab notes](scripts/hyperv/README.md)
+[Read the lab notes](docs/hyperv-bulk-deploy-ja.md)
 
 [Read the bulk_deploy_vm script](scripts/hyperv/bulk_deploy_vm.ps1)
 
