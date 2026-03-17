@@ -512,3 +512,75 @@ getfacl /tmp/practice/file1.txt
 `nobody` ユーザーへのACLが正しく設定されているか確認します。
 
 ---
+# 📅 2026-03-16
+---
+
+## `sudo useradd testuser1`
+testuser1 を作成します。
+
+---
+
+## `sudo useradd -m -s /bin/bash -u 1500 testuser2`
+testuser2 を作成します。同時にホームディレクトリを作成し（`-m`）、使用するシェルを bash に指定し（`-s`）、ユーザーIDを1500に指定します（`-u`）。
+
+---
+
+## `sudo passwd testuser1`
+testuser1 にパスワードを設定します。
+
+---
+
+## `sudo usermod -aG wheel testuser1`
+testuser1 を wheel グループに追加します。wheel グループのメンバーは `sudo` コマンドを使用して管理者権限で操作できます。
+
+---
+
+## `sudo usermod -L testuser1`
+testuser1 のアカウントをロックします。（`-L` = Lock）
+
+---
+
+## `sudo usermod -U testuser1`
+testuser1 のアカウントをアンロックします。（`-U` = Unlock）
+
+---
+
+## `id testuser1`
+testuser1 のUID・GID・所属グループを確認します。
+
+---
+
+## `groups testuser1`
+testuser1 が所属しているグループ一覧を表示します。
+
+---
+
+## `cat /etc/passwd | grep testuser`
+/etc/passwd から testuser を含む行を検索します。
+
+---
+
+## `sudo groupadd testgroup`
+testgroup グループを作成します。
+
+---
+
+## `sudo usermod -aG testgroup testuser1`
+testuser1 を testgroup グループに追加します。
+
+---
+
+## `grep testgroup /etc/group`
+/etc/group から testgroup のメンバーを確認します。
+
+---
+
+## `sudo userdel testuser1`
+testuser1 を削除します。
+
+---
+
+## `sudo userdel -r testuser2`
+testuser2 を削除し、ホームディレクトリを含む関連ファイルをすべて削除します。（`-r` = remove home directory）
+
+---
