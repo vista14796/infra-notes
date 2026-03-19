@@ -43,6 +43,14 @@ PowerShell を使用して Windows Server 2025 を一括デプロイする自動
 
 ---
 
+### Azure ハイブリッドID統合ラボ
+
+地端 Active Directory と Azure Entra ID を連携させた混合クラウド環境の構築と除錯記録。
+
+[Read the lab notes](docs/azure-hybrid-lab-ja.md)
+
+---
+
 ### Linux Basic Commands
 
 Linux 基本コマンドの練習ノート。
