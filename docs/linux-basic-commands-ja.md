@@ -841,3 +841,122 @@ sshdに関連するログを表示します。
 ## `systemctl get-default`
 システムの起動時のデフォルトターゲット（モード）を確認します。
 ```
+---
+# 📅 2026-03-23
+---
+
+## `lsblk`
+接続されている全ディスクとパーティション構成を確認します。
+
+---
+
+## `fdisk -l`
+全ディスクの詳細情報（サイズ・パーティションテーブル）を確認します。
+
+---
+
+## `df -hT`
+現在マウントされているファイルシステムの使用状況とタイプを確認します。
+
+---
+
+## `sudo fdisk /dev/vdb`
+vdbディスクのパーティション設定を対話形式で開始します。
+
+## `# n → p → 1 → Enter → +1G → w`
+新規パーティション作成の手順：新規(n)→基本(p)→番号1→開始位置デフォルト→サイズ+1G→書き込み(w)。
+
+---
+
+## `sudo mkfs.ext4 /dev/vdb1`
+vdb1パーティションをext4ファイルシステムでフォーマットします。
+
+---
+
+## `sudo mkdir /mnt/testdisk`
+vdb1のマウントポイントとなるディレクトリを作成します。
+
+---
+
+## `sudo mount /dev/vdb1 /mnt/testdisk`
+フォーマット済みのvdb1をtestdiskディレクトリにマウントします。
+
+---
+
+## `df -h | grep testdisk`
+testdiskのマウントが成功しているか確認します。
+---
+# 📅 2026-03-24
+---
+
+## `sudo blkid /dev/vdb1`
+vdb1のUUIDを確認します。fstabへの記載に使用します。
+
+---
+
+## `sudo vi /etc/fstab`
+システム起動時の自動マウント設定を編集します。
+
+## `# UUID=xxxx /mnt/testdisk ext4 defaults 0 2`
+UUIDを使って永続マウントを設定する書式です。
+
+---
+
+## `sudo umount /mnt/testdisk`
+testdiskをアンマウントします。
+
+---
+
+## `sudo mount -a`
+/etc/fstabの内容を再読み込みし、全エントリをマウントします。
+
+---
+
+## `df -h | grep testdisk`
+mount -aによるマウントが成功しているか確認します。
+---
+# 📅 2026-03-25
+---
+
+## `sudo pvcreate /dev/vdb2`
+vdb2をLVM用の物理ボリューム（PV）として初期化します。
+
+---
+
+## `sudo vgcreate vg_test /dev/vdb2`
+vg_testというボリュームグループ（VG）を作成し、PVを追加します。
+
+---
+
+## `sudo lvcreate -L 500M -n lv_data vg_test`
+vg_testから500MBを切り出し、lv_dataという論理ボリューム（LV）を作成します。
+
+---
+
+## `pvdisplay`
+物理ボリュームの詳細情報を確認します。
+
+---
+
+## `vgdisplay`
+ボリュームグループの詳細情報を確認します。
+
+---
+
+## `lvdisplay`
+論理ボリュームの詳細情報を確認します。
+
+---
+
+## `sudo mkfs.xfs /dev/vg_test/lv_data`
+論理ボリュームをXFSファイルシステムでフォーマットし、データの読み書きができる状態にします。
+
+---
+
+## `sudo mkdir /mnt/lvmtest`
+論理ボリュームのマウントポイントとなるディレクトリを作成します。
+
+---
+
+## `sudo mount /dev/vg_test/lv_data /mnt/lvmtest`
+フォーマット済みの論理ボリュームをlvmtestディレクトリにマウントします。
