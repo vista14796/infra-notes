@@ -98,11 +98,10 @@
 
 状態：4/5
 ```
-
 ---
 
 K8sの詳細なPost-Mortemは別ファイルに分けてもいい。
 ```
 notes/
-├── error_log.md       ← 毎日の3行記録
-└── k8s-postmortem.md  ← 今日の崩壊記録（任意）
+error_log.md       ← 毎日の3行記録
+k8s-postmortem.md  ← 今日の崩壊記録（任意）
