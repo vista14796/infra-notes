@@ -998,6 +998,4 @@ lv_dataの永続マウント設定を追記します。
 
 ## `# UUID=xxxx /mnt/lvmtest xfs defaults 0 2`
 再起動後もlvmtestが自動マウントされるよう設定します。
-```
 
----
