@@ -5,7 +5,11 @@
 
 状態：3/5
 
+---
+
 ## 2026-03-19（Azure）
+
+---
 
 1. DCの昇格失敗
 
@@ -67,6 +71,8 @@
 
 ## 2026-03-25（LPIC-1 / LVM）
 
+---
+
 1. 最も重要な学び：LV（論理ボリューム）のパス名は作成時の名前と完全一致が必要（`_` と `-` は別物）。また、LV 作成後は必ず `mkfs` でフォーマットしてからマウントする手順を忘れてはいけない。
 2. 正しい解法：操作前に `lvdisplay` で正確な「LV Path」を確認し、ファイルシステムを作成してからマウントする。
 3. なぜ間違えたか（または気になった点）：PV・VG を作れば自動で LV も使えるようになると思い込んでいた。ストレージの階層構造（PV → VG → LV）の依存関係を完全には把握できていなかった。
@@ -75,34 +81,106 @@
 
 ---
 
-## 2026-03-26（LPIC-1 / LVM拡張・K8s実践）
-
-1. 最も重要な学び：
-   LVM拡張はlvextendだけでは不完全。
-   xfs_growfsでファイルシステム自体も
-   拡張しないとdfで容量が増えない。
-   また、K8sクラスター崩壊の原因は
-   MetalLBのIPプールに稼働中のIPを
-   設定したことによるARP競合だった。
-
-2. 正しい解法（一句話）：
-   LVM：lvextend → xfs_growfs → df確認の順。
-   K8s：MetalLBのIPプールは必ず空きIPを使う。
-        MasterノードはDHCPではなくStaticIPにする。
-
-3. なぜ間違えたか（盲点）：
-   LVM：ボリューム拡張とファイルシステム拡張が
-        別々の操作だと知らなかった。
-   K8s：MetalLBが既存IPを「奪いに来る」動作を
-        理解していなかった。
-
-状態：4/5
+## 2026-03-26（K8s / Nginx負載平衡 / LVM拡張）
 
 ---
 
-notes/
+### 【事件1】LVM拡張：xfs_growfsを忘れた
 
-error_log.md       ← 毎日の3行記録
+1. 最も重要な学び：
+   lvextendでボリュームを拡張しても
+   xfs_growfsを実行しないと
+   ファイルシステムは古いサイズのまま。
+   dfで容量が増えない原因はここ。
 
-k8s-postmortem.md  ← 今日の崩壊記録（任意）
+2. 正しい解法：
+   lvextend → xfs_growfs → df -hの順で必ず確認する。
 
+3. なぜ間違えたか（盲点）：
+   ボリューム拡張とファイルシステム拡張が
+   別々の操作だと知らなかった。
+
+---
+
+### 【事件2】K8s環境構築：containerd起動失敗
+
+1. 最も重要な学び：
+   kubeadm initはcontainerdが起動していないと
+   CRIエラーで止まる。
+   またRocky LinuxはSystemdCgroup=trueが必須。
+   falseのままだとコンテナが起動直後にクラッシュする。
+
+2. 正しい解法：
+   systemctl enable --now containerd実行後、
+   config.tomlのSystemdCgroupをtrueに変更してから
+   kubeadm initを実行する。
+
+3. なぜ間違えたか（盲点）：
+   コマンドを貼り付けた後にEnterを押し忘れ、
+   サービスがinactiveのまま次の手順に進んでいた。
+
+---
+
+### 【事件3】K8s崩壊：MetalLB IPプール設定ミス
+
+1. 最も重要な学び：
+   MetalLBのIPプールに稼働中のIPを設定すると
+   ARPの競合が発生し、MasterのIPが変わり、
+   etcdが起動できなくなり、クラスター全体が停止する。
+   これが今日の「大崩壊」の原因。
+
+2. 正しい解法：
+   MetalLBのIPプールは必ず空きIPを使う。
+   （例：192.168.80.190-200など）
+   MasterノードはDHCPではなくStaticIPにする。
+   崩壊後の復旧手順：
+   ① sudo ip addr add 192.168.80.133/24 dev ens160
+   ② /etc/kubernetes/manifests/のYAMLを移動して
+      kubeletに再起動を誘発させる
+   ③ kubectl delete svc nginxでMetalLBを停止
+
+3. なぜ間違えたか（盲点）：
+   MetalLBが「発放するIP」と
+   「既存のIPを奪いに来る動作」の
+   違いを理解していなかった。
+   IPプールは「誰も使っていない空きIP」という
+   前提を知らなかった。
+
+---
+
+### 【事件4】K8s：Worker NodeでkubectlがConnection Refused
+
+1. 最も重要な学び：
+   kubectlのコマンドはMasterでのみ実行する。
+   WorkerにはKubeconfig（~/.kube/config）がないため、
+   デフォルトでlocalhost:8080に接続しようとして失敗する。
+
+2. 正しい解法：
+   全てのkubectlコマンドはMasterで実行する。
+
+3. なぜ間違えたか（盲点）：
+   K8sはMaster/Worker分離の主従構造だと
+   理解していなかった。
+
+---
+
+### 【事件5】Dockerfile：カスタムページが表示されない
+
+1. 最も重要な学び：
+   DockerfileのCOPY先がNginxの
+   デフォルトパスと一致していないと
+   カスタムページは表示されない。
+   Nginxのデフォルトパスは
+   /usr/share/nginx/html/。
+
+2. 正しい解法：
+   COPY index.html /usr/share/nginx/html/index.html
+
+3. なぜ間違えたか（盲点）：
+   /appなど任意のディレクトリにCOPYしても
+   Nginxは参照しないと知らなかった。
+
+---
+
+状態：4/5
+（崩壊から復旧まで完走できた。原因も理解した。）
