@@ -91,12 +91,13 @@
    lvextendでボリュームを拡張しても
    xfs_growfsを実行しないと
    ファイルシステムは古いサイズのまま。
+
    dfで容量が増えない原因はここ。
 
-2. 正しい解法：
+3. 正しい解法：
    lvextend → xfs_growfs → df -hの順で必ず確認する。
 
-3. なぜ間違えたか（盲点）：
+4. なぜ間違えたか（盲点）：
    ボリューム拡張とファイルシステム拡張が
    別々の操作だと知らなかった。
 
@@ -107,15 +108,17 @@
 1. 最も重要な学び：
    kubeadm initはcontainerdが起動していないと
    CRIエラーで止まる。
+   
    またRocky LinuxはSystemdCgroup=trueが必須。
+   
    falseのままだとコンテナが起動直後にクラッシュする。
 
-2. 正しい解法：
+3. 正しい解法：
    systemctl enable --now containerd実行後、
    config.tomlのSystemdCgroupをtrueに変更してから
    kubeadm initを実行する。
 
-3. なぜ間違えたか（盲点）：
+4. なぜ間違えたか（盲点）：
    コマンドを貼り付けた後にEnterを押し忘れ、
    サービスがinactiveのまま次の手順に進んでいた。
 
@@ -127,11 +130,13 @@
    MetalLBのIPプールに稼働中のIPを設定すると
    ARPの競合が発生し、MasterのIPが変わり、
    etcdが起動できなくなり、クラスター全体が停止する。
+   
    これが今日の「大崩壊」の原因。
 
-2. 正しい解法：
+3. 正しい解法：
    MetalLBのIPプールは必ず空きIPを使う。
    （例：192.168.80.190-200など）
+   
    MasterノードはDHCPではなくStaticIPにする。
    崩壊後の復旧手順：
    ① sudo ip addr add 192.168.80.133/24 dev ens160
@@ -139,10 +144,11 @@
       kubeletに再起動を誘発させる
    ③ kubectl delete svc nginxでMetalLBを停止
 
-3. なぜ間違えたか（盲点）：
+5. なぜ間違えたか（盲点）：
    MetalLBが「発放するIP」と
    「既存のIPを奪いに来る動作」の
    違いを理解していなかった。
+   
    IPプールは「誰も使っていない空きIP」という
    前提を知らなかった。
 
@@ -152,13 +158,14 @@
 
 1. 最も重要な学び：
    kubectlのコマンドはMasterでのみ実行する。
+   
    WorkerにはKubeconfig（~/.kube/config）がないため、
    デフォルトでlocalhost:8080に接続しようとして失敗する。
 
-2. 正しい解法：
+3. 正しい解法：
    全てのkubectlコマンドはMasterで実行する。
 
-3. なぜ間違えたか（盲点）：
+4. なぜ間違えたか（盲点）：
    K8sはMaster/Worker分離の主従構造だと
    理解していなかった。
 
@@ -170,13 +177,14 @@
    DockerfileのCOPY先がNginxの
    デフォルトパスと一致していないと
    カスタムページは表示されない。
+   
    Nginxのデフォルトパスは
    /usr/share/nginx/html/。
 
-2. 正しい解法：
+3. 正しい解法：
    COPY index.html /usr/share/nginx/html/index.html
 
-3. なぜ間違えたか（盲点）：
+4. なぜ間違えたか（盲点）：
    /appなど任意のディレクトリにCOPYしても
    Nginxは参照しないと知らなかった。
 
