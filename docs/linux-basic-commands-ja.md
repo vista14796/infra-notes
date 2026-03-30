@@ -999,3 +999,52 @@ lv_dataの永続マウント設定を追記します。
 ## `# UUID=xxxx /mnt/lvmtest xfs defaults 0 2`
 再起動後もlvmtestが自動マウントされるよう設定します。
 
+---
+# 📅 2026-03-27
+---
+
+## `ip addr show`
+全ネットワークインターフェースのIPアドレスと状態を確認します。
+
+---
+
+## `ip route show`
+システムのルーティングテーブルを確認します。
+どのインターフェース経由でパケットが送出されるかを確認します。
+
+---
+
+## `cat /etc/resolv.conf`
+DNSサーバー（nameserver）の設定を確認します。
+
+---
+
+## `cat /etc/hosts`
+ホスト名とIPアドレスの静的マッピングを確認します。
+
+---
+
+## `nmcli device status`
+ネットワークインターフェースの接続状態を確認します。
+
+---
+
+## `nmcli connection show`
+設定済みのネットワーク接続一覧とUUIDを確認します。
+
+---
+
+## `sudo hostnamectl set-hostname testserver`
+システムのホスト名をtestserverに変更します。
+
+---
+
+## `ping -c 4 8.8.8.8`
+外部ホスト（Google DNS）に4回pingを送信し、
+ネットワーク疎通を確認します。
+
+---
+
+## `ss -tuln`
+TCP・UDPのリスニングポートを一覧表示します。
+現在どのサービスがどのポートで待ち受けているかを確認します。
