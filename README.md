@@ -10,7 +10,7 @@ Infrastructure / Cloud learning notes.
 - [x] Active Directory automation
 - [x] Hyper-V virtualization lab
 - [ ] VMware virtualization lab
-- [ ] Azure hybrid cloud（期末専題）
+- [x] Azure hybrid cloud（期末専題）
 - [ ] AWS basic infrastructure
 
 ---
