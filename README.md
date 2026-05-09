@@ -61,7 +61,7 @@ PowerShell を使用して Windows Server 2025 を一括デプロイする自動
 
 ---
 
-### Azure Hybrid Cloud VPN (Final Project)
+### Azure Hybrid Cloud VPN
 
 オンプレミス AD と Azure Entra ID を連携させ、P2S VPN 経由でセキュアなハイブリッドクラウド運用環境を構築したプロジェクトです。
 
