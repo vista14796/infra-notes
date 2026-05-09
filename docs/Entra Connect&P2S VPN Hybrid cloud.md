@@ -153,4 +153,4 @@ Azure でこのアーキテクチャを習得することで、AWS・GCP のド�
 
 ## 関連リポジトリ
 
-- [Active Directory ユーザー自動作成ラボ](docs/ad-user-automation-ja.md)
+- [Active Directory ユーザー自動作成ラボ](../docs/ad-user-automation-ja.md)
