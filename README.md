@@ -17,6 +17,16 @@ Infrastructure / Cloud learning notes.
 
 ## Projects
 
+### Linux Basic Commands
+
+Linux 基本コマンドの練習ノート。
+
+学習の進捗に合わせて順次更新していきます。
+
+[Read the notes](docs/linux-basic-commands-ja.md)
+
+---
+
 ### Active Directory User Automation
 
 PowerShell を使用して Active Directory のユーザー作成を自動化する練習。
@@ -43,7 +53,7 @@ PowerShell を使用して Windows Server 2025 を一括デプロイする自動
 
 ---
 
-### Azure Hybrid Identity Integration Lab
+### Azure Hybrid Identity Lab
 
 地端 Active Directory と Azure Entra ID を連携させた混合クラウド環境の構築と除錯記録。
 
@@ -51,7 +61,7 @@ PowerShell を使用して Windows Server 2025 を一括デプロイする自動
 
 ---
 
-### Azure Hybrid Identity Integration Lab (Final Project)
+### Azure Hybrid Cloud VPN Lab (Final Project)
 
 オンプレミス AD と Azure Entra ID を連携させ、P2S VPN 経由でセキュアなハイブリッドクラウド運用環境を構築したプロジェクトです。
 
@@ -60,11 +70,3 @@ Ansible による自動デプロイと NAT Gateway によるアウトバウン�
 [Read the lab notes](./docs/azure-hybrid-cloud-vpn-ja.md)
 
 ---
-
-### Linux Basic Commands
-
-Linux 基本コマンドの練習ノート。
-
-学習の進捗に合わせて順次更新していきます。
-
-[Read the notes](docs/linux-basic-commands-ja.md)
