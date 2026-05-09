@@ -9,8 +9,8 @@ Infrastructure / Cloud learning notes.
 - [x] Linux basic commands
 - [x] Active Directory automation
 - [x] Hyper-V virtualization lab
-- [ ] VMware virtualization lab
-- [x] Azure hybrid cloud（期末専題）
+- [x] VMware virtualization lab
+- [x] Azure Hybrid Identity Integration (Final Project)
 - [ ] AWS basic infrastructure
 
 ---
