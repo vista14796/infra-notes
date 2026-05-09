@@ -31,7 +31,7 @@ Linux 基本コマンドの練習ノート。
 
 PowerShell を使用して Active Directory のユーザー作成を自動化する練習。
 
-[Read the lab](docs/ad-user-automation-ja.md)
+[Read the lab](docs/active-directory-user-automation-ja.md)
 
 [Read the generate_users script](scripts/ad/generate_users.ps1)
 
