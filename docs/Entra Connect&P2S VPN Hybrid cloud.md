@@ -151,7 +151,3 @@ Azure でこのアーキテクチャを習得することで、AWS・GCP のド�
 、`Rocky Linux` 、`Ansible` 、`nginx` 、`PowerShell` 、`VMware Workstation`
 
 ---
-
-## 関連リポジトリ
-
-- [Active Directory ユーザー自動作成ラボ](../docs/ad-user-automation-ja.md)
