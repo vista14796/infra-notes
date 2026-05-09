@@ -9,7 +9,7 @@ Infrastructure / Cloud learning notes.
 - [x] Linux basic commands
 - [x] Active Directory user automation
 - [x] HyperV bulk deploy
-- [x] Azure Hybrid lab
+- [x] Azure Hybrid Identity
 - [x] Azure Hybrid Cloud VPN
 - [ ] AWS basic infrastructure
 
