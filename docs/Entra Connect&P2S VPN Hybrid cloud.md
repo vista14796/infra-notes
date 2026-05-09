@@ -75,8 +75,8 @@ Rocky Linux（Ansible）→ VPN トンネル経由 SSH → Azure VM → nginx �
 
 | スクリプト | 役割 |
 |-----------|------|
-| `generate_users.ps1` | ランダムな従業員名簿100件を生成（CSV形式） |
-| `create_ad_users.ps1` | CSV を読み込み AD へバッチインポート・OU 振り分け |
+| `generate_users.ps1` (../scripts/ad/generate_users.ps1)| ランダムな従業員名簿100件を生成（CSV形式） |
+| `create_ad_users.ps1` (../scripts/ad/create_ad_users.ps1)| CSV を読み込み AD へバッチインポート・OU 振り分け |
 
 **PowerShell 実行結果（一部）：**
 ```
