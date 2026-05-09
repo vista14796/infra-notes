@@ -51,6 +51,14 @@ PowerShell を使用して Windows Server 2025 を一括デプロイする自動
 
 ---
 
+### Azure Hybrid Identity Integration Lab (Final Project)
+
+オンプレミス AD と Azure Entra ID を連携させ、P2S VPN 経由でセキュアなハイブリッドクラウド運用環境を構築したプロジェクトです。Ansible による自動デプロイと NAT Gateway によるアウトバウンド制御を実装しています。
+
+[Read the lab notes](./docs/azure-hybrid-cloud-vpn-ja.md)
+
+---
+
 ### Linux Basic Commands
 
 Linux 基本コマンドの練習ノート。
