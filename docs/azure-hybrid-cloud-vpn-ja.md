@@ -11,6 +11,9 @@ Microsoft Azure を活用し、オンプレミス環境とクラウドを安全�
 **核心的な課題：**
 > リモート従業員が、サーバーを公網に露出させることなく、安全にクラウドサーバーへ接続して運用作業を行うにはどうすればよいか？
 
+![Architecture Diagram](./images/azure-hybrid-cloud-vpn-ja.png)
+
+
 ---
 
 ## 環境
