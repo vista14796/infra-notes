@@ -153,4 +153,4 @@ Azure でこのアーキテクチャを習得することで、AWS・GCP のド�
 
 ## 関連リポジトリ
 
-- [期中専題：PowerShell AD アカウント自動作成](../ad-automation) ← リンクは適宜修正してください
+- [Active Directory ユーザー自動作成ラボ](docs/ad-user-automation-ja.md)
