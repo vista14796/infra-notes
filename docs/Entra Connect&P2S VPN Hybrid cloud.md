@@ -145,9 +145,9 @@ Azure でこのアーキテクチャを習得することで、AWS・GCP のド�
 
 ## 使用技術スタック
 
-`Windows Server AD` 、`Microsoft Entra Connect` `Azure Entra ID`
-`Azure VPN Gateway (P2S)` `NSG` `NAT Gateway` `Azure VM`
-`Rocky Linux` `Ansible` `nginx` `PowerShell` `VMware Workstation`
+`Windows Server AD` 、`Microsoft Entra Connect` 、`Azure Entra ID`
+、`Azure VPN Gateway (P2S)` 、`NSG` 、`NAT Gateway` 、`Azure VM`
+、`Rocky Linux` 、`Ansible` 、`nginx` 、`PowerShell` 、`VMware Workstation`
 
 ---
 
