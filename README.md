@@ -67,6 +67,6 @@ PowerShell を使用して Windows Server 2025 を一括デプロイする自動
 
 Ansible による自動デプロイと NAT Gateway によるアウトバウンド制御を実装しています。
 
-[Read the lab notes](./docs/azure-hybrid-cloud-vpn-ja.md)
+[Read the lab notes](docs/azure-hybrid-cloud-vpn-ja.md)
 
 ---
