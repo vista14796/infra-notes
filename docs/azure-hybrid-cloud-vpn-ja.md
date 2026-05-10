@@ -31,6 +31,7 @@ Microsoft Azure を活用し、オンプレミス環境とクラウドを安全�
 
 ## アーキテクチャ概要
 
+アーキテクチャ図
 ![Architecture Diagram](../images/azure-hybrid-cloud-vpn-ja.png)
 
 本プロジェクトは2つの主要フローで構成されています。
