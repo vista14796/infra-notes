@@ -27,11 +27,11 @@ Microsoft Azure を活用し、オンプレミス環境とクラウドを安全�
 - Network Security Group（NSG）
 - NAT Gateway
 
-![Architecture Diagram](../images/azure-hybrid-cloud-vpn-ja.png)
-
 ---
 
 ## アーキテクチャ概要
+
+![Architecture Diagram](../images/azure-hybrid-cloud-vpn-ja.png)
 
 本プロジェクトは2つの主要フローで構成されています。
 
