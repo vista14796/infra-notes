@@ -71,6 +71,8 @@ PowerShell を使用して Windows Server 2025 を一括デプロイする自動
 
 Ansible による自動デプロイと NAT Gateway によるアウトバウンド制御を実装しています。
 
+VPN接続エラー809およびAzure 2025年アウトバウンドポリシー変更（NAT Gateway導入）のトラブルシューティング経験を含む。
+
 [Read the lab notes](docs/azure-hybrid-cloud-vpn-ja.md)
 
 ---
