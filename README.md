@@ -1,6 +1,10 @@
 # Infra Notes
 
-Infrastructure / Cloud learning notes.
+台湾在住のインフラ・クラウドエンジニア志望（JLPT N1）。
+
+iSpanにて516時間のクラウド・ネットワーク集中訓練を修了。AzureハイブリッドクラウドおよびAnsible自動化の実装経験あり。
+
+日本でのインフラエンジニア職を目指して学習・構築中。
 
 ---
 
