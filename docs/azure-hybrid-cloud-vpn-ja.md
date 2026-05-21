@@ -95,7 +95,7 @@ Failed  : 37（重複名前によるスキップ）
 > スクリプトは重複名を検出した場合、警告を表示してスキップします。
 > バッチ処理全体は中断されません。
 
-PowerShell 実行結果
+PowerShell 実行結果（抜粋）
 ![Architecture Diagram](../images/PowerShell実行結果.png)
 
 ---
