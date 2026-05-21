@@ -15,7 +15,6 @@ iSpanにて516時間のクラウド・ネットワーク集中訓練を修了。
 - [x] Hyper-V Bulk VM Deployment
 - [x] Azure Hybrid Identity
 - [x] Azure Hybrid Cloud VPN
-- [ ] AWS basic infrastructure
 
 ---
 
