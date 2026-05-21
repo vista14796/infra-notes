@@ -96,7 +96,7 @@ Failed  : 37（重複名前によるスキップ）
 > バッチ処理全体は中断されません。
 
 PowerShell 実行結果
-![Architecture Diagram](../images/PowerShell 実行結果.png)
+![Architecture Diagram](../images/PowerShell実行結果.png)
 
 ---
 
