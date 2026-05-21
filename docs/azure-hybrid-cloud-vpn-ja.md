@@ -73,7 +73,7 @@ Rocky Linux（Ansible）→ VPN トンネル経由 SSH → Azure VM → nginx �
 
 ## AD アカウント自動化（期中専題との連携）
 
-本プロジェクトでは、期中専題（[`Active Directory ユーザー自動作成ラボ`](../docs/ad-user-automation-ja.md)）で作成した PowerShell スクリプトを活用し、
+本プロジェクトでは、期中専題（[`Active Directory ユーザー自動作成ラボ`](../docs/active-directory-user-automation-ja.md)）で作成した PowerShell スクリプトを活用し、
 100件の従業員アカウントを自動生成・AD へバッチインポートしました。
 
 | スクリプト | 役割 |
