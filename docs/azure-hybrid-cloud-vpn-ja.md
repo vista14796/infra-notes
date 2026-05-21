@@ -50,13 +50,13 @@ Windows Server AD → Entra Connect（HTTPS/TLS1.2+）→ Azure Entra ID
 ### ② リモート安全接続フロー（Networking + Security）
 
 ```
-従業員端末 → P2S VPN（憑証認証）→ Azure VPN Gateway → NSG → Azure VM
+従業員端末 → P2S VPN（証明書認証）→ Azure VPN Gateway → NSG → Azure VM
 ```
 
 - P2S VPN：物理的な VPN 機器不要。従業員 PC に VPN Client をインストールするだけ
 - 接続後、P2S アドレスプール IP（172.16.201.x）が自動割り当て
 - NSG：インターネットからのすべてのインバウンド通信をブロック。VPN アドレスプールからの SSH（Port 22）のみ許可
-- **Zero Trust アーキテクチャ**の実践：VPN なしでは VM に一切アクセス不可
+- **ゼロトラスト（Zero Trust） アーキテクチャ**の実践：VPN なしでは VM に一切アクセス不可
 
 ### ③ 自動化運用（Automation）
 
@@ -71,9 +71,9 @@ Rocky Linux（Ansible）→ VPN トンネル経由 SSH → Azure VM → nginx �
 
 ---
 
-## AD アカウント自動化（期中専題との連携）
+## AD アカウント自動化（中間プロジェクトとの連携）
 
-本プロジェクトでは、期中専題（[`Active Directory ユーザー自動作成ラボ`](../docs/active-directory-user-automation-ja.md)）で作成した PowerShell スクリプトを活用し、
+本プロジェクトでは、中間プロジェクト（[`Active Directory ユーザー自動作成ラボ`](../docs/active-directory-user-automation-ja.md)）で作成した PowerShell スクリプトを活用し、
 100件の従業員アカウントを自動生成・AD へバッチインポートしました。
 
 | スクリプト | 役割 |
